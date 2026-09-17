@@ -1,0 +1,7 @@
+.gridMovieList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 200px));
+    gap: 28px;
+    justify-content: center;
+    padding: 32px 40px;
+}

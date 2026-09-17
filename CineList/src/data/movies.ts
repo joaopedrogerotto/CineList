@@ -1,4 +1,6 @@
-export const movies = [
+import type { Movie } from "../types/Movie";
+
+export const movies : Movie[] = [
     {
         id: 1,
         title: "Interestelar",

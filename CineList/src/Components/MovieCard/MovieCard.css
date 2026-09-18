@@ -22,7 +22,7 @@
 }
 
 .cardMovie:hover .imgMovie {
-    filter: brightness(0.7);  /* escurece a imagem no hover */
+    filter: brightness(0.7);
 }
 .movieInfo {
     padding: 14px 12px;
@@ -61,4 +61,13 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin: 4px 0 0 0;
+}
+
+.unfullStar,.fullStarGold{
+    font-size: 20px;
+    text-align: right;
+}
+
+.fullStarGold{
+    color: #f0bf0e;
 }

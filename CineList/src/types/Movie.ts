@@ -5,4 +5,6 @@ export interface Movie{
     year: number;
     rating: number;
     image: string;
+    description: string;
+    favorite: boolean;
 }

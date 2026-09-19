@@ -68,6 +68,10 @@
     text-align: right;
 }
 
+.unfullStar{
+    color: #ffffff;
+}
+
 .fullStarGold{
     color: #f0bf0e;
 }

@@ -1,13 +1,13 @@
 import MovieCard from "../MovieCard/MovieCard";
 import type { Movie } from "../../types/Movie";
-import "./MovieList.css"
+import "./Movies.css"
 import { useState } from "react";
 
 interface MovieListProps{
     movies: Movie[]
 }
 
-function MovieList({movies}: MovieListProps){
+function Movies({movies}: MovieListProps){
     const [moviesList, setMovies] = useState<Movie[]>(movies);
 
     function changeFavoriteMovie(idMovie: number){
@@ -30,4 +30,4 @@ function MovieList({movies}: MovieListProps){
     )
 }
 
-export default MovieList;
+export default Movies;

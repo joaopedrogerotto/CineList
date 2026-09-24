@@ -1,7 +1,7 @@
 import MovieCard from "../MovieCard/MovieCard";
 import type { Movie } from "../../types/Movie";
 import "./Movies.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface MovieListProps{
     movies: Movie[]
@@ -9,6 +9,8 @@ interface MovieListProps{
 
 function Movies({movies}: MovieListProps){
     const [moviesList, setMovies] = useState<Movie[]>(movies);
+
+    useEffect(() => {setMovies(movies)}, [movies]); 
 
     function changeFavoriteMovie(idMovie: number){
         setMovies(currentMovies =>

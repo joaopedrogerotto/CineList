@@ -26,7 +26,11 @@ function MovieCard({movie, onChangeFavorite}:MovieCardProps){
                 <p className="genreMovie">{movie.genre}</p>
                 <p 
                     className={movie.favorite ? "fullStarGold" : "unfullStar"}
-                    onClick={() => onChangeFavorite(movie.id)}
+                    onClick={(event) =>{
+                            event.stopPropagation();
+                            onChangeFavorite(movie.id);
+                        }
+                    }
                 >
                         {movie.favorite ? <FaStar/> : <CiStar/>}
                 </p>

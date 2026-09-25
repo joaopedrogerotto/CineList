@@ -3,7 +3,6 @@ import './App.css'
 import Header from './Components/Header/Header'
 import { movies } from './data/movies'
 import Favorites from './Components/Favorites/Favorites'
-import Movies from './Components/Movies/Movies'
 import SearchBar from './Components/SearchBar/SearchBar'
 import MovieDetails from './Components/MovieDetails/MovieDetails'
 

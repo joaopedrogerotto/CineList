@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import type { Movie } from "../../types/Movie";
-import MovieDetails from "../MovieDetails/MovieDetails";
 import "./MovieCard.css"
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";

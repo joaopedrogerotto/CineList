@@ -1,0 +1,33 @@
+.filterGenre {
+    position: relative;
+}
+
+.filterGenre select {
+    height: 46px;
+    min-width: 190px;
+    padding: 0 40px 0 14px;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    background-color: #1f2937;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.filterGenre select:hover {
+    border-color: #4b5563;
+}
+
+.filterGenre select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.filterGenre option {
+    background-color: #1f2937;
+    color: #ffffff;
+}

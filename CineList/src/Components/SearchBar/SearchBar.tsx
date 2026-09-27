@@ -3,6 +3,7 @@ import type { Movie } from "../../types/Movie";
 import Movies from "../Movies/Movies";
 import "./SearchBar.css"
 import FilterGenre from "../FilterGenre/FilterGenre";
+import FilterSort from "../FilterOrder/FilterSort";
 
 interface MovieListProps{
     movies: Movie[]
@@ -11,6 +12,8 @@ interface MovieListProps{
 function SearchBar({ movies }: MovieListProps) {
     const [search, setSearch] = useState("");
     const [selectedGenre, setSelectedGenre] = useState("Todos");
+    const [selectedSort, setSelectedSort] = useState("Todos");
+
 
     const filteredMovies = movies.filter(movie =>{
         const matchesSearch = movie.title.toLowerCase().includes(search.toLowerCase());
@@ -18,6 +21,28 @@ function SearchBar({ movies }: MovieListProps) {
 
         return matchesSearch && matchesSelectMovie;
     });
+
+    function SortMovies(tipoOrdem: string) {
+        switch (tipoOrdem) {
+            case "MaisAvaliado":
+                return [...filteredMovies].sort((a, b) => b.rating - a.rating);
+
+            case "MenosAvaliado":
+                return [...filteredMovies].sort((a, b) => a.rating - b.rating);
+            case "Recente":
+                return [...filteredMovies].sort((a, b) => b.year - a.year);
+            case "Antigo":
+                return [...filteredMovies].sort((a, b) => a.year - b.year);
+            case "AlfabeticoCrescente":
+                return [...filteredMovies].sort((a, b) => a.title.localeCompare(b.title));
+            case "AlfabeticoDecrescente":
+                return [...filteredMovies].sort((a, b) => b.title.localeCompare(a.title));
+            default:
+                return filteredMovies;
+        }
+    }
+
+    const sortedMovies = SortMovies(selectedSort);
 
 
     return (
@@ -33,9 +58,10 @@ function SearchBar({ movies }: MovieListProps) {
                     />
                 </div>
                 <FilterGenre movies={movies} selectedGenre={selectedGenre}onChangeGenre={setSelectedGenre}></FilterGenre>
+                <FilterSort selectedSort={selectedSort} onChangeSort={setSelectedSort}></FilterSort>
             </div>
 
-            <Movies movies={filteredMovies} />
+            <Movies movies={sortedMovies} />
         </>
     );
 }
